@@ -1,0 +1,67 @@
+
+@font-face {
+    font-family: 'Segoe';
+    src: url('/font/Segoe\ UI.ttf') format('truetype'),
+    url('/font/Segoe\ UI\ Bold.ttf') format('truetype'),
+    url('/font/Segoe\ UI\ Bold\ Italic.ttf') format('truetype'),
+    url('/font/Segoe\ UI\ Italic.ttf') format('truetype');
+}
+body{
+    background-color: #9e58aa;
+}
+
+.mosaico{
+    background-color: #55315b;
+    height: 629px;
+    width: 1110px;
+    position: relative;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.cabecalho{
+    background-color: #55315b;
+    color: #fff;
+    position: absolute;
+    width: 1110px;
+    font-weight: 700;
+    font-size: 56px;
+    text-align: center;
+    font-family: 'Segoe';
+
+}
+.cartas-verso{
+    position:absolute;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+img{
+    margin-left: 34px;
+    margin-bottom: 34px;
+    width: 117px;
+    height: 146px;
+}
+
+.verso {
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+  }
+
+.vira{
+    display: none;
+}
+
+.mostra{
+    display: block;
+}
