@@ -1,6 +1,6 @@
 let cardSrc;
 let quantidadeCartas
-let vetor = [];
+let vetor;
 let  carta1 = null;
 let carta2 = null;
 let carta1Id = null;
@@ -19,6 +19,7 @@ function numeroCartas() {
 }
 
 function populandoMosaico(listaCartas) {
+  let vetor = [];
   const mosaicoVerso = document.querySelector(".mosaico .cartas-verso");
   vetor = listaCartas.concat(listaCartas);
   vetor = vetor.sort((a,b) => Math.random()-0.5);
