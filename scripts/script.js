@@ -1,6 +1,6 @@
 let cardSrc;
 let quantidadeCartas
-let vetor;
+let vetor = [];
 let  carta1 = null;
 let carta2 = null;
 let carta1Id = null;
