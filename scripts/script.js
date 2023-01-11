@@ -44,25 +44,28 @@ function mudarVerso(cardId) {
     }else{
       if(carta1Id != cardId){
         carta2 = cartaString;
+       /*estav dentro do if abaixo*/ const cartaVerso1 = document.querySelector(".cartas-verso .carta"+carta1Id);
+        if(carta1 == carta2){
+          console.log("deu match");
+         cartaVerso.classList.add("match");
+         cartaVerso1.classList.add("match");
+         cartaVerso.setAttribute('onclick','#');
+         cartaVerso1.setAttribute('onclick','#');
+        }else{
+          setTimeout(() => {cartaVerso.setAttribute('src', `./img/CardBack.jpg`)},1000);
+          setTimeout(() =>{cartaVerso1.setAttribute('src', `./img/CardBack.jpg`)},1000);
+        }
+        carta1 = null;
+        carta2 = null;
+        carta1Id = null;
       }
-    }
-    if(carta2 != null){
-      const cartaVerso1 = document.querySelector(".cartas-verso .carta"+carta1Id);
-      if(carta1 == carta2){
-        console.log("deu match");
-       cartaVerso.classList.add("match");
-       cartaVerso1.classList.add("match");
-       cartaVerso.setAttribute('onclick','#');
-       cartaVerso1.setAttribute('onclick','#');
-      }else{
-        setTimeout(() => {cartaVerso.setAttribute('src', `./img/CardBack.jpg`)},1000);
-        setTimeout(() =>{cartaVerso1.setAttribute('src', `./img/CardBack.jpg`)},1000);
-      }
-      carta1 = null;
-      carta2 = null;
+      //if(carta2 != null){}}
     }
   }else{
     cardSrc = null;
+    carta1 = null;
+    carta2 = null;
+    carta1Id = null;
     cartaVerso.setAttribute('src', `./img/CardBack.jpg`);
   }
 }
