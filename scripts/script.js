@@ -17,7 +17,6 @@ function numeroCartas() {
     }
     populandoMosaico(cardsArray);
 }
-numeroCartas();
 
 function populandoMosaico(listaCartas) {
   const mosaicoVerso = document.querySelector(".mosaico .cartas-verso");
@@ -28,7 +27,6 @@ function populandoMosaico(listaCartas) {
     mosaicoVerso.innerHTML += `<img class="carta carta${contador}" onclick="mudarVerso(${contador})" src="./img/CardBack.jpg" alt="A gata"></img>`;
   }
 }
-populandoMosaico();
 
 function mudarVerso(cardId) {
   const cartaVerso = document.querySelector(".cartas-verso .carta"+cardId);
