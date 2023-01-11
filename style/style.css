@@ -1,10 +1,10 @@
 
 @font-face {
     font-family: 'Segoe';
-    src: url('/font/Segoe\ UI.ttf') format('truetype'),
-    url('/font/Segoe\ UI\ Bold.ttf') format('truetype'),
-    url('/font/Segoe\ UI\ Bold\ Italic.ttf') format('truetype'),
-    url('/font/Segoe\ UI\ Italic.ttf') format('truetype');
+    src: url('../font/Segoe\ UI.ttf') format('truetype'),
+    url('../font/Segoe\ UI\ Bold.ttf') format('truetype'),
+    url('../font/Segoe\ UI\ Bold\ Italic.ttf') format('truetype'),
+    url('../font/Segoe\ UI\ Italic.ttf') format('truetype');
 }
 body{
     background-color: #9e58aa;
