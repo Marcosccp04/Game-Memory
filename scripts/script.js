@@ -17,9 +17,9 @@ function numeroCartas() {
     }
     populandoMosaico(cardsArray);
 }
+numeroCartas();
 
 function populandoMosaico(listaCartas) {
-  let vetor = [];
   const mosaicoVerso = document.querySelector(".mosaico .cartas-verso");
   vetor = listaCartas.concat(listaCartas);
   vetor = vetor.sort((a,b) => Math.random()-0.5);
@@ -28,6 +28,7 @@ function populandoMosaico(listaCartas) {
     mosaicoVerso.innerHTML += `<img class="carta carta${contador}" onclick="mudarVerso(${contador})" src="./img/CardBack.jpg" alt="A gata"></img>`;
   }
 }
+
 
 function mudarVerso(cardId) {
   const cartaVerso = document.querySelector(".cartas-verso .carta"+cardId);
