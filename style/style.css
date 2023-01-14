@@ -146,8 +146,9 @@ button{
 }
 
 .reseta{
-    margin-left: 120%;
-    margin-bottom: 50%;
+    position: absolute;
+    margin-left: 81%;
+    margin-bottom: 40%;
     width: 200px;
     background-color: orange;
 }

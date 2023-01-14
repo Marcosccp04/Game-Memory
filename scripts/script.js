@@ -7,7 +7,6 @@ let carta1Id = null;
 let cartaString;
 
 
-//novo conteudo
 const jogos=["Marvel", "Vanguard"];
 const quantidadeJogadores = [1,2,3,4];
 const tabuleiros = ['4x4','6x6'];
@@ -17,6 +16,15 @@ let escolhas = {
   quantidade: null,
   tabuleiro: null,
   quantidadeCartas: null,
+}
+
+
+function reiniciar(){
+  const mosaicoVerso = document.querySelector(".mosaico .cartas-verso");
+  mosaicoVerso.innerHTML = ' ';
+  console.log(mosaicoVerso);
+  numeroCartas();
+
 }
 
 function gerarBotoes(){
@@ -67,30 +75,24 @@ function alteraClasse(elemento,classe,opt){
 }
 
 function selecionar(elemento,opt){
-alteraClasse(elemento,'selecionado',opt);
+  alteraClasse(elemento,'selecionado',opt);
 }
 
 function iniciar(){
   const telaOpcoes = document.querySelector('.configuracao');
   const telaJogo = document.querySelector('.jogo');
-  console.log(telaOpcoes);
-  telaOpcoes.classList.add('mudar-tela');
-  telaJogo.classList.remove('mudar-tela');
-  numeroCartas()
+  if(telaJogo.classList.contains('mudar-tela')){
+    telaOpcoes.classList.add('mudar-tela');
+    telaJogo.classList.remove('mudar-tela');
+  }else{
+    telaOpcoes.classList.remove('mudar-tela');
+    telaJogo.classList.add('mudar-tela');
+  }
+  numeroCartas();
 }
 
 gerarBotoes();
-
-
-
-
-
-
-
-
-
-
-
+/*a parte abaixo sera reescrita para melhorar o desempenho da palicação*/
 function numeroCartas() {   
 
     let cardsArray = ["202.webp"];
