@@ -8,10 +8,15 @@ let cartaString;
 
 
 //novo conteudo
-const jogos=['Marvel', 'Vanguard'];
+const jogos=["Marvel", "Vanguard"];
 const quantidadeJogadores = [1,2,3,4];
 const tabuleiros = ['4x4','6x6'];
-let escolhas = [];
+
+let escolhas = {
+  jogo: null,
+  quantidade: null,
+  tabuleiro: null
+}
 
 function gerarBotoes(){
   const jogo = document.querySelector(".tema-do-jogo div");
@@ -25,13 +30,24 @@ function gerarBotoes(){
 function popula(classe, arr){
   for(let i = 0; i < arr.length; i++){
     console.log('aqui');
-    classe.innerHTML += `<button class="btn-opcao" onclick="selecionar(this)"><span class="texto-btn" >${arr[i]}</span></button>`;
+    classe.innerHTML += `<button class="btn-opcao" onclick="selecionar(this,${i})"><span class="texto-btn" >${arr[i]}</span></button>`;
   }
 }
 
-function alteraEscolha(){}
+function alteraEscolha(elemento,opt){
+  const pai = elemento.parentNode.parentNode;
+  console.log('tipo + ',typeof(opt));
+  if(pai.classList.contains('tema-do-jogo')){
+    escolhas.jogo = jogos[opt];
+  }else if(pai.classList.contains('quantidade-jogadores')){
+    escolhas.quantidade = quantidadeJogadores[opt];
+  }else{
+    escolhas.tabuleiro = tabuleiros[opt];
+  }
+  console.log(escolhas);
+}
 
-function alteraClasse(elemento,classe){
+function alteraClasse(elemento,classe,opt){
   if(elemento.classList.contains(classe)){ 
     elemento.classList.remove(classe);
  }else{ 
@@ -39,12 +55,13 @@ function alteraClasse(elemento,classe){
    filhos.forEach(element => {
       element.classList.remove('selecionado');
    });
+   alteraEscolha(elemento,opt);
    elemento.classList.add(classe);
  }
 }
 
-function selecionar(elemento){
-alteraClasse(elemento,'selecionado');
+function selecionar(elemento,opt){
+alteraClasse(elemento,'selecionado',opt);
 }
 
 gerarBotoes();
