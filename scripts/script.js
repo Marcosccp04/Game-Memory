@@ -15,7 +15,8 @@ const tabuleiros = ['4x4','6x6'];
 let escolhas = {
   jogo: null,
   quantidade: null,
-  tabuleiro: null
+  tabuleiro: null,
+  quantidadeCartas: null,
 }
 
 function gerarBotoes(){
@@ -43,6 +44,11 @@ function alteraEscolha(elemento,opt){
     escolhas.quantidade = quantidadeJogadores[opt];
   }else{
     escolhas.tabuleiro = tabuleiros[opt];
+    if(opt == 0){
+      escolhas.quantidadeCartas = 8;
+    }else{
+      escolhas.quantidadeCartas = 18;
+    }
   }
   console.log(escolhas);
 }
@@ -64,6 +70,15 @@ function selecionar(elemento,opt){
 alteraClasse(elemento,'selecionado',opt);
 }
 
+function iniciar(){
+  const telaOpcoes = document.querySelector('.configuracao');
+  const telaJogo = document.querySelector('.jogo');
+  console.log(telaOpcoes);
+  telaOpcoes.classList.add('mudar-tela');
+  telaJogo.classList.remove('mudar-tela');
+  numeroCartas()
+}
+
 gerarBotoes();
 
 
@@ -76,18 +91,15 @@ gerarBotoes();
 
 
 
-/*function numeroCartas() {   
+function numeroCartas() {   
+
     let cardsArray = ["202.webp"];
-    quantidadeCartas =  prompt("Informe a quantidade de pares entre 2-9");
-  while((quantidadeCartas < 2 || quantidadeCartas > 9)){
-        quantidadeCartas =  prompt("Informe o numero de cartas entre 4-9");
-    }
-    for(let contador = 1; contador < quantidadeCartas; contador++){
+    for(let contador = 1; contador < escolhas.quantidadeCartas; contador++){
         cardsArray.push(`${contador}.webp`);
     }
+    console.log('aqui');
     populandoMosaico(cardsArray);
 }
-numeroCartas();
 
 function populandoMosaico(listaCartas) {
   const mosaicoVerso = document.querySelector(".mosaico .cartas-verso");
@@ -114,7 +126,7 @@ function mudarVerso(cardId) {
     }else{
       if(carta1Id != cardId){
         carta2 = cartaString;
-       /*estav dentro do if abaixo*/ /*const cartaVerso1 = document.querySelector(".cartas-verso .carta"+carta1Id);
+        const cartaVerso1 = document.querySelector(".cartas-verso .carta"+carta1Id);
         if(carta1 == carta2){
           console.log("deu match");
          cartaVerso.classList.add("match");
@@ -129,7 +141,6 @@ function mudarVerso(cardId) {
         carta2 = null;
         carta1Id = null;
       }
-      //if(carta2 != null){}}
     }
   }else{
     cardSrc = null;
@@ -139,6 +150,6 @@ function mudarVerso(cardId) {
     cartaVerso.setAttribute('src', `./img/CardBack.jpg`);
   }
 }
-*/
+
 
 
