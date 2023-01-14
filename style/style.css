@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Segoe';
     src: url('../font/Segoe\ UI.ttf') format('truetype'),
@@ -6,37 +5,74 @@
     url('../font/Segoe\ UI\ Bold\ Italic.ttf') format('truetype'),
     url('../font/Segoe\ UI\ Italic.ttf') format('truetype');
 }
+
+span{
+    font-family:'Atkinson Hyperlegible', sans-serif;
+    font-weight: 700;
+    
+}
+.texto-opt{
+    color: white;
+    line-height: 20px;
+    font-size: 20px;
+}
+.texto-btn{
+    font-size: 26px;
+    color: white;
+}
 body{
     background-color: #9e58aa;
 }
 
 .mosaico{
     background-color: #55315b;
-    height: 629px;
-    width: 1110px;
-    position: relative;
+    height: 100%;
+    width: 100%;
     margin: auto;
-    margin-top: 5%;
+    border-radius: 25px;
     text-align: center;
+}
+
+.opcoes{
+    background-color: #55315b;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    border-radius: 25px;
+    
 }
 
 .cabecalho{
-    background-color: #55315b;
     color: #fff;
-    position: absolute;
-    width: 1110px;
     font-weight: 700;
     font-size: 56px;
-    text-align: center;
+    left: 15%;
     font-family: 'Segoe';
-
 }
 .cartas-verso{
-    position:absolute;
-    margin: auto;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 4%;
    
+}
+
+
+main{
+   height: 629px;
+   width: 1110px;
+   border-radius: 25px;
+   display: flex;
+   align-items: center;
+   margin: auto;    
+   margin-top: 4%;
+   box-shadow: 1px 1px 0px rgb(89, 48, 61), 
+                2px 2px 0px rgb(89, 48, 61),
+                3px 3px 0px rgb(89, 48, 61),
+                4px 4px 0px rgb(89, 48, 61),
+                5px 5px 0px rgb(89, 48, 61),
+                6px 6px 0px rgb(89, 48, 61);
 }
 
 img{
@@ -45,30 +81,11 @@ img{
     width: 117px;
     height: 146px;
     backface-visibility: hidden;
-    transition: all .5s;
+    transition: all .5s ease-out;
     transform-style: preserve-3d;
+    border-radius: 10%;
 }
 
-.verso {
-    width: 100%;
-    height: 100%;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    backface-visibility: hidden;
-    transition: all .500s;
-    transform-style: preserve-3d;
-  }
-
-.vira{
-    display: none;
-}
-
-.mostra{
-    display: block;
-}
 
 .match{
     box-sizing: border-box;
@@ -76,3 +93,48 @@ img{
     border-radius: 20%;
     background-color: #9e58aa;
 }
+
+
+.configuracao{
+   height: 654px;
+   width: 680px;
+   background-color: #55315b;
+   box-shadow: 1px 1px 0px rgb(89, 48, 61), 
+                2px 2px 0px rgb(89, 48, 61),
+                3px 3px 0px rgb(89, 48, 61),
+                4px 4px 0px rgb(89, 48, 61),
+                5px 5px 0px rgb(89, 48, 61),
+                6px 6px 0px rgb(89, 48, 61);
+}
+
+.tema-do-jogo{
+    margin-top: 10%;
+}
+
+
+.botoes-opcoes{
+    margin-top: 2%;
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 40px;
+}
+
+button{
+    background-color: #bcced9;
+    border-radius: 26px;
+    margin-right: 2%;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+}
+
+.iniciar-jogo{
+    background-color: orange;
+}
+.selecionado{
+    background-color: #152938;
+}
+

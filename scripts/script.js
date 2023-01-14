@@ -6,7 +6,60 @@ let carta2 = null;
 let carta1Id = null;
 let cartaString;
 
-function numeroCartas() {   
+
+//novo conteudo
+const jogos=['Marvel', 'Vanguard'];
+const quantidadeJogadores = [1,2,3,4];
+const tabuleiros = ['4x4','6x6'];
+let escolhas = [];
+
+function gerarBotoes(){
+  const jogo = document.querySelector(".tema-do-jogo div");
+  const jogador = document.querySelector(".quantidade-jogadores div");
+  const tabuleiro = document.querySelector(".tamanho-do-tabuleiro div");
+  popula(jogo,jogos);
+  popula(jogador,quantidadeJogadores);
+  popula(tabuleiro,tabuleiros);
+}
+
+function popula(classe, arr){
+  for(let i = 0; i < arr.length; i++){
+    console.log('aqui');
+    classe.innerHTML += `<button class="btn-opcao" onclick="selecionar(this)"><span class="texto-btn" >${arr[i]}</span></button>`;
+  }
+}
+
+function alteraEscolha(){}
+
+function alteraClasse(elemento,classe){
+  if(elemento.classList.contains(classe)){ 
+    elemento.classList.remove(classe);
+ }else{ 
+   const filhos = elemento.parentNode.childNodes;
+   filhos.forEach(element => {
+      element.classList.remove('selecionado');
+   });
+   elemento.classList.add(classe);
+ }
+}
+
+function selecionar(elemento){
+alteraClasse(elemento,'selecionado');
+}
+
+gerarBotoes();
+
+
+
+
+
+
+
+
+
+
+
+/*function numeroCartas() {   
     let cardsArray = ["202.webp"];
     quantidadeCartas =  prompt("Informe a quantidade de pares entre 2-9");
   while((quantidadeCartas < 2 || quantidadeCartas > 9)){
@@ -44,7 +97,7 @@ function mudarVerso(cardId) {
     }else{
       if(carta1Id != cardId){
         carta2 = cartaString;
-       /*estav dentro do if abaixo*/ const cartaVerso1 = document.querySelector(".cartas-verso .carta"+carta1Id);
+       /*estav dentro do if abaixo*/ /*const cartaVerso1 = document.querySelector(".cartas-verso .carta"+carta1Id);
         if(carta1 == carta2){
           console.log("deu match");
          cartaVerso.classList.add("match");
@@ -69,3 +122,6 @@ function mudarVerso(cardId) {
     cartaVerso.setAttribute('src', `./img/CardBack.jpg`);
   }
 }
+*/
+
+

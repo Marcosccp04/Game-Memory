@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/reset.css">
-    <link rel="stylesheet" href="./style/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <main>
-        <section class="mosaico">
-
-            <nav class="cabecalho">
-                <h1 class="titulo">Marvel Snap Memory Card Game</h1>
-            </nav>
-            
-            <div class="cartas-verso"></div>
-        </section>        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Maike Game</title>
+  </head>
+  <body>
+    <main class="configuracao">
+      <section class="opcoes"> 
+        <article class="tema-do-jogo">
+          <span class="texto-opt">Selecione o tema</span>
+          <div class="botoes-opcoes"></div>
+        </article>
+        <article class="quantidade-jogadores">
+          <span class="texto-opt">Selecione a quantidade de jogadores</span>
+          <div class="botoes-opcoes"></div>
+        </article>
+        <article class="tamanho-do-tabuleiro">
+          <span class="texto-opt">Selecione o tamanho do tabuleiro</span>
+          <div class="botoes-opcoes"></div>
+        </article>
+        <div class="botoes-opcoes">
+          <button class="iniciar-jogo" onclick="iniciar(this)">
+            <span class="texto-btn">
+                Iniciar jogo</span>
+            </button>
+        </div>
+      </section>
     </main>
-    
-   <script src="./scripts/script.js"></script>
-
-    </body>
+    <script src="./scripts/script.js"></script>
+  </body>
 </html>
