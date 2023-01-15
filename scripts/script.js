@@ -78,21 +78,38 @@ function selecionar(elemento,opt){
   alteraClasse(elemento,'selecionado',opt);
 }
 
-function iniciar(){
-  const telaOpcoes = document.querySelector('.configuracao');
-  const telaJogo = document.querySelector('.jogo');
+function alteraTela(tela1, tela2){
+  const telaOpcoes = document.querySelector(tela1);
+  const telaJogo = document.querySelector(tela2);
   if(telaJogo.classList.contains('mudar-tela')){
     telaOpcoes.classList.add('mudar-tela');
     telaJogo.classList.remove('mudar-tela');
   }else{
     telaOpcoes.classList.remove('mudar-tela');
-    telaJogo.classList.add('mudar-tela');
+    console.log(vetor);
   }
+}
+function iniciar(){
+  alteraTela('.configuracao', '.jogo');
   numeroCartas();
 }
 
+function novoJogo(){
+  const telaJogo = document.querySelector('.jogo .mosaico .cartas-verso');
+  telaJogo.innerHTML = '';
+  vetor = null;
+ // escolhas = null;
+  alteraTela('.jogo','.configuracao');
+  const botoes = document.querySelectorAll('.configuracao .botoes-opcoes button');
+  botoes.forEach(element => {
+    element.classList.remove('selecionado');
+ });
+  console.log(botoes);
+}
 gerarBotoes();
-/*a parte abaixo sera reescrita para melhorar o desempenho da palicação*/
+
+
+/*a parte abaixo sera reescrita para melhorar o desempenho da aplicação*/
 function numeroCartas() {   
 
     let cardsArray = ["202.webp"];

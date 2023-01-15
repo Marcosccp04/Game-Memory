@@ -145,9 +145,13 @@ button{
     display: none;
 }
 
-.reseta{
+.reseta, .novo-jogo{
     position: absolute;
     margin-left: 80%;
     width: 200px;
     background-color: orange;
+}
+
+.novo-jogo{
+    margin-bottom: 10%;
 }
